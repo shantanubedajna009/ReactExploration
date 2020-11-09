@@ -1,0 +1,41 @@
+.red {
+    color: red;
+  }
+  
+  .bold {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  
+  .Cockpit button {
+    background-color: green;
+    font: inherit;
+    border: 1px solid blue;
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+  
+  }
+  
+  .Cockpit button:hover {
+    background-color: lightgreen;
+    color: black;
+  }
+  
+  
+  
+  /* this is a whole different scoped class 
+  now this is just a condition where the 
+  bRed class has to belong to a button and
+   that button bust be under an element where
+   that element has the class of App */
+   
+  .Cockpit button.Red {
+    background-color: red;
+    color: white;
+  }
+  
+  .Cockpit button.Red:hover{
+    background-color: salmon;
+    color: white;
+  }

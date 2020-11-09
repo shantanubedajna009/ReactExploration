@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+
+
+
+/* .Button {
+  background-color: green;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+  color: white;
+
+}
+
+.Button:hover {
+  background-color: lightgreen;
+  color: black;
+}
+
+
+
+this is just a selector specific for the button itself
+means that this Red class only applies to the Button 
+kinda like django url namespaces
+
+.Button.Red {
+  background-color: red;
+  color: white;
+}
+
+.Button.Red:hover{
+  background-color: salmon;
+  color: white;
+} */
