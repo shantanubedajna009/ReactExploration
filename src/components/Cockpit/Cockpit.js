@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Cockpit.css'
 
 
 const cockpit = (props) => {
+
+    useEffect( () => {
+      console.log('[Cockpit.js] useEffect');
+
+      const timer = setTimeout( () => {
+
+        alert('ORAAAAAAAAAAAAAAA');
+
+
+      }, 5000);
+
+
+      // this runs after the useeffect gets executed
+      // obiously
+      return () => {
+        clearTimeout(timer);
+        console.log('[Cockpit.js] useEffect Return/Cleanup');
+      }
+
+    }, []) // runs on every update cause no second argument passes
+    // will run on every startup if an empty list passed
+    // will run on speciic object changes if passes in that list like
+    // [props.persons, props.showPersons]  like this
+
+
+
 
     let adjustedClasses = [];
     if (props.persons.length <= 2){

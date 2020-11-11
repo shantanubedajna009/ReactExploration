@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 //import Radium from 'radium';
 //import styled from 'styled-components';
 import classes from './Person.css';
+
+class Person extends Component {
+
+    render() {
+        console.log('[Person.js] redering the Person');
+
+
+        return (
+            <div className={classes.Person}>
+                <p onClick={this.props.click}>Im {this.props.name} my age is: {this.props.age}</p>
+                <input onChange={this.props.nameChange} value={this.props.name}></input>
+            </div>
+
+        )
+
+
+    }
+}
+
+export default Person;
+
+
+
+
+
+
+
+
 
 // const StyledDiv = styled.div`
 // width: 60%;
@@ -16,22 +44,22 @@ import classes from './Person.css';
 // }
 // `;
 
-const person = (props) => {
+// const person = (props) => {
 
-    // const rnd = Math.random();
-    // if (rnd > 0.7){
-    //     throw Error('Something went wrong');
-    // }
+//     // const rnd = Math.random();
+//     // if (rnd > 0.7){
+//     //     throw Error('Something went wrong');
+//     // }
     
 
-    return (
+//     return (
 
-        <div className={classes.Person}>
-            <p onClick={props.click}>Im {props.name} my age is: {props.age}</p>
-            <input onChange={props.nameChange} value={props.name}></input>
-        </div>
+//         <div className={classes.Person}>
+//             <p onClick={props.click}>Im {props.name} my age is: {props.age}</p>
+//             <input onChange={props.nameChange} value={props.name}></input>
+//         </div>
 
-    )
-}
+//     )
+// }
 
-export default person;
+// export default person;
