@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent } from 'react'
 import Person from './Person/Person';
 
 
-class Persons extends Component {
+class Persons extends PureComponent {
 
 
     // this component does not contain a state
@@ -14,13 +14,22 @@ class Persons extends Component {
     //     return state;
     // }
 
-    shouldComponentUpdate(nextProps, nextState){
-        console.log('[Persons.js] shouldComponentUpdate');
+    // shouldComponentUpdate(nextProps, nextState){
+    //     console.log('[Persons.js] shouldComponentUpdate');
 
-        // boolean value based on which component will make the dom update
-        // from the virtual dom to real dom
-        return true;
-    }
+    //     // boolean value based on which component will make the dom update
+    //     // from the virtual dom to real dom
+
+    //     if (nextProps.person !== this.props.persons || nextProps.deletenameHandler !== this.props.deletenameHandler || nextProps.nameChangeHandler !== this.props.nameChangeHandler ) {
+    //         return true;
+    //     }
+    //     else{
+    //         return false;
+    //     }
+
+
+        
+    // }
 
     getSnapshotBeforeUpdate(prevProps, prevState){
         console.log('[Persons.js] getSnapshotBeforeUpdate');

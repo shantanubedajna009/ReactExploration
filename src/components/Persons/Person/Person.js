@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //import Radium from 'radium';
 //import styled from 'styled-components';
 import classes from './Person.css';
+import Aux from '../../../hoc/Aux';
 
 class Person extends Component {
 
@@ -10,10 +11,15 @@ class Person extends Component {
 
 
         return (
-            <div className={classes.Person}>
-                <p onClick={this.props.click}>Im {this.props.name} my age is: {this.props.age}</p>
-                <input onChange={this.props.nameChange} value={this.props.name}></input>
-            </div>
+                <Aux>
+                    <div className={classes.Person}>
+
+                        <p key='k1' onClick={this.props.click}>Im {this.props.name} my age is: {this.props.age}</p>
+                        <input key='k2' onChange={this.props.nameChange} value={this.props.name}></input>
+
+                    </div>
+                    <h1>Yare Yare</h1>
+                </Aux>
 
         )
 
