@@ -1,7 +1,8 @@
 import React, {Component } from 'react';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
-import WithClass from '../hoc/WithClass;'
+import WithClass from '../hoc/WithClass';
+import withClassWithSomeLogic from '../hoc/withClassWithSomeLogic';
 
 import classes from './App.css';
 

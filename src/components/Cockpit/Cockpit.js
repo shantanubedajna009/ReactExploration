@@ -9,7 +9,8 @@ const cockpit = (props) => {
 
       const timer = setTimeout( () => {
 
-        alert('ORAAAAAAAAAAAAAAA');
+        //alert('ORAAAAAAAAAAAAAAA');
+        console.log('Boom Shaka laka');
 
 
       }, 5000);
