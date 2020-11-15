@@ -151,7 +151,7 @@ class App extends Component {
     }
 
     return (
-      <WithClass classes={classes.App}>
+      <Aux>
         <h1>This is a react App</h1>
         <br/>
         <button onClick={ () => { this.toggleCockpit() } }>
@@ -169,12 +169,15 @@ class App extends Component {
 
         {persons}
 
-      </WithClass>
+      </Aux>
       
     )
 
   }
   
 }
-
-export default App;
+                // wrapperfunction to implement some logic
+                // here applying className to a div
+                // but can do some exceptiion handling
+                // this is exactly like python decorators
+export default withClassWithSomeLogic(App, classes.App);
