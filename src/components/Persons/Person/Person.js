@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 //import Radium from 'radium';
 //import styled from 'styled-components';
 import classes from './Person.css';
@@ -11,15 +11,15 @@ class Person extends Component {
 
 
         return (
-                <Aux>
+                <Fragment>
                     <div className={classes.Person}>
 
                         <p key='k1' onClick={this.props.click}>Im {this.props.name} my age is: {this.props.age}</p>
                         <input key='k2' onChange={this.props.nameChange} value={this.props.name}></input>
 
                     </div>
-                    <h1>Yare Yare</h1>
-                </Aux>
+                    <h1>Yare Yare Daze</h1>
+                </Fragment>
 
         )
 
