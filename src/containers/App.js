@@ -55,6 +55,7 @@ class App extends Component {
 
       showPersons: false,
       showCockpit: true,
+      checkCounter: 0
     }
   
   switchHandler = (newName) => {
@@ -90,10 +91,17 @@ class App extends Component {
     persons[personIndex] = person;
 
     this.setState(
-      {
-        persons: persons
-      }
-    )
+     (prevState, props) => {
+       return {
+        persons: persons,
+        
+        //checkCounter: this.state.checkCounter + 1,
+        checkCounter: prevState.checkCounter + 1,
+        
+       }
+
+     } 
+    );
 
   }
 
