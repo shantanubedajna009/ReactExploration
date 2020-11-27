@@ -4,6 +4,7 @@ import Cockpit from '../components/Cockpit/Cockpit';
 import WithClass from '../hoc/WithClass';
 import Aux from '../hoc/Aux';
 import withClassWithSomeLogic from '../hoc/withClassWithSomeLogic';
+import AuthContext from '../context/auth-context';
 
 import classes from './App.css';
 
@@ -55,7 +56,8 @@ class App extends Component {
 
       showPersons: false,
       showCockpit: true,
-      checkCounter: 0
+      checkCounter: 0,
+      isLoggedin: false
     }
   
   switchHandler = (newName) => {
@@ -131,6 +133,17 @@ class App extends Component {
   }
 
 
+  loginHandler = () => {
+    
+    this.setState((prevState, prevprops) => {
+        return ({
+          isLoggedin: !prevState.isLoggedin
+        })
+
+    })
+  }
+
+
   render () {
 
     console.log('[App.js] render method');
@@ -152,6 +165,7 @@ class App extends Component {
             persons={this.state.persons}
             deletenameHandler={ this.deletenameHandler }
             nameChangeHandler={ this.nameChangeHandler }
+            //isLoggedin={this.state.isLoggedin}
           />
         
       );
@@ -168,15 +182,26 @@ class App extends Component {
         </button>
         <br/>
         <br/>
-        { this.state.showCockpit ?
-        <Cockpit 
-          personsLength={this.state.persons.length}
-          showPersons={this.state.showPersons}
-          toggeChangeHandler={this.toggeChangeHandler}
-          switchHandler={this.switchHandler}
-        />: null}
+        <AuthContext.Provider value={
+          {
+          isLoggedin: this.state.isLoggedin,
+          loginHandler: this.loginHandler
+          }
+        
+        }>
+          { this.state.showCockpit ?
+          <Cockpit 
+            personsLength={this.state.persons.length}
+            showPersons={this.state.showPersons}
+            toggeChangeHandler={this.toggeChangeHandler}
+            switchHandler={this.switchHandler}
+            //isLoggedin={this.state.isLoggedin}
+            //loginHandler={this.loginHandler}
+          />: null}
 
-        {persons}
+          {persons}
+
+        </AuthContext.Provider>
 
       </Aux>
       

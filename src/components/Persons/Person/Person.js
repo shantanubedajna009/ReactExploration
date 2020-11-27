@@ -7,6 +7,8 @@ import withClassWithSomeLogic from '../../../hoc/withClassWithSomeLogic';
 import withClass from '../../../hoc/WithClass';
 import PropTypes from 'prop-types';
 
+import AuthContext from '../../../context/auth-context';
+
 class Person extends Component {
 
     constructor(props){
@@ -14,6 +16,8 @@ class Person extends Component {
 
         this.inputElement = React.createRef();
     }
+
+    static contextType = AuthContext;
 
     componentDidMount(){
         //this.inputElement.focus();
@@ -28,6 +32,19 @@ class Person extends Component {
         return (
                 <Aux>
 
+                    {/* <AuthContext.Consumer>
+                       {
+                           (context) => {
+                               return  (
+                                   context.isLoggedin ? <h3>Logged In !</h3> : <h3>Logged out</h3>
+                                   )
+                           }
+                       }
+                    </AuthContext.Consumer> */}
+                    
+                    
+
+                    {this.context.isLoggedin ? <h3>Logged In !</h3> : <h3>Logged out</h3>}
 
                     <p key='k1' onClick={this.props.click}>Im {this.props.name} my age is: {this.props.age}</p>
                     <input 

@@ -1,11 +1,20 @@
-import React, { useEffect } from 'react';
-import classes from './Cockpit.css'
+import React, { useEffect, useRef, useContext } from 'react';
+import classes from './Cockpit.css';
+import AuthContext from '../../context/auth-context';
 
 
 const cockpit = (props) => {
 
+    const toggleRef = useRef(null); 
+
+    // this authContext can be whatever you want
+    const authContext = useContext(AuthContext);
+
     useEffect( () => {
       console.log('[Cockpit.js] useEffect');
+
+      toggleRef.current.click();
+
 
       const timer = setTimeout( () => {
 
@@ -53,11 +62,25 @@ const cockpit = (props) => {
             <h3 className={adjustedClasses.join(' ')}>Tuki !!!!</h3>
             <br/>
             
-            <button onClick={props.toggeChangeHandler}
+            <button ref={toggleRef} onClick={props.toggeChangeHandler}
             className={btnClass.join(' ')}>
+            
             
             {props.showPersons ? "Hide Persons" : "Show Persons"}
             </button>
+
+            {/* <AuthContext.Consumer>
+              {
+                (context) => {
+                  return(
+                    <button  onClick={() => context.loginHandler()}> {context.isLoggedin ? "Logout": "Login"}</button>
+                  )
+                }
+              }
+            </AuthContext.Consumer> */}
+           
+
+           <button  onClick={() => authContext.loginHandler()}> {authContext.isLoggedin ? "Logout": "Login"}</button>
 
             <br/>
             <br/>

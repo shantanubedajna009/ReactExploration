@@ -28,7 +28,7 @@
   now this is just a condition where the 
   bRed class has to belong to a button and
    that button bust be under an element where
-   that element has the class of App */
+   that element has the class of Cockpit */
    
   .Cockpit button.Red {
     background-color: red;
